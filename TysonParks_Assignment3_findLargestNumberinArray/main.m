@@ -16,24 +16,37 @@ int main(int argc, const char * argv[]) {
         
         // Find and store array object count
         NSInteger numberOfItems = [numberList count];
-        NSLog(@"There are %lu items in this list", numberOfItems);
+        NSLog(@"There are %lu numbers in this list", numberOfItems);
         
-        // Print an item from the array
-        NSLog(@"The array item at reference [4] is %@", numberList[4]);
+        // Cheeky personification of program
+        NSLog(@"Let's look at these numbers one by one until we find the highest number");
         
-        //Get the NSInteger 'long' value of the NSNumber in the array and print
-        NSInteger numberValue = [numberList[4] integerValue];
-        NSLog(@"The NSNumber %@ has a value of %li", numberList[4], numberValue);
+        // TEST Print an item from the array
+        //NSLog(@"The array item at reference [4] is %@", numberList[4]);
         
-        // Create evaluation loop that compares 2 consecutive numbers, chooses the highest number and stores that high value
-        //NSInteger highestValueSoFar = 0;
-        //for (int i = 0; i < numberOfItems; i++) {
-        //    highestValueSoFar = (highestValueSoFar >= numberList[i]) ? highestValueSoFar : numberList[i];
-        //    NSLog(@")
-        //}
+        // TEST Get the NSInteger 'long' value of the NSNumber in the array and print
+        //NSInteger numberValue = [numberList[4] integerValue];
+        //NSLog(@"The NSNumber %@ has a value of %li", numberList[4], numberValue);
         
-        // Print highest number
-        //NSLog(@"The highest number in the array is %@", highestValueSoFar);
+        // Create loop counter i
+        int i = 0;
+        
+        // Create temporary variable to store the highest value so far
+        NSInteger highestValueSoFar = 0;
+        
+        
+        // Create a recursive evaluation loop that compares each number value in the array to the highest value stored so far,
+        // storing a new highest value based upon this evaluation
+        for (i = 0; i < numberOfItems; i++) {
+            NSInteger numberValue = [numberList[i] integerValue];
+            NSLog(@"numbers tested: %li and %li", highestValueSoFar, numberValue);
+            highestValueSoFar = (highestValueSoFar >= numberValue) ? highestValueSoFar : numberValue;
+            NSLog(@"%li is the new highest value", highestValueSoFar);
+        }
+        
+        // Print the highest number in the array
+        NSLog(@"The entire array has been evaluated");
+        NSLog(@"The highest number in the list is %li", highestValueSoFar);
     }
     return 0;
 }
