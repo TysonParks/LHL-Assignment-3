@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         // Initialize array containing numbers of size determined by objects
-        NSArray *numberList = [[NSArray alloc] initWithObjects:@7, @45, @76, @8, @54, @6, @0, @645, @3458, @549, @3472, @9675, @347, @32, @35, @13, @4, @5, @6, @14, nil];
+        NSArray *numberList = [[NSArray alloc] initWithObjects:@7, @45, @76, @8, @54, @6, @0, @645, @3458, @549, @3472, @1675, @347, @32, @35, @13, @4, @5, @6, @14, nil];
         
         // Find and store array object count
         NSInteger numberOfItems = [numberList count];
@@ -34,9 +34,8 @@ int main(int argc, const char * argv[]) {
         // Create temporary variable to store the highest value so far
         NSInteger highestValueSoFar = 0;
         
-        
         // Create a recursive evaluation loop that compares each number value in the array to the highest value stored so far,
-        // storing a new highest value based upon this evaluation
+        // storing a new highest value when a higher number is found
         for (i = 0; i < numberOfItems; i++) {
             NSInteger numberValue = [numberList[i] integerValue];
             NSLog(@"numbers tested: %li and %li", highestValueSoFar, numberValue);
@@ -45,7 +44,7 @@ int main(int argc, const char * argv[]) {
         }
         
         // Print the highest number in the array
-        NSLog(@"The entire array has been evaluated");
+        NSLog(@"The entire list has been evaluated");
         NSLog(@"The highest number in the list is %li", highestValueSoFar);
     }
     return 0;
