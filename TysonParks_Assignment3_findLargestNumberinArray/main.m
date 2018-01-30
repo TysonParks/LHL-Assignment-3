@@ -11,7 +11,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        // Initialize array containing numbers of size determined by objects
+        // Initialize array containing numbers of size determined by objects presented
         NSArray *numberList = [[NSArray alloc] initWithObjects:@7, @45, @76, @8, @54, @6, @0, @645, @3458, @549, @3472, @1675, @347, @32, @35, @13, @4, @5, @6, @14, nil];
         
         // Find and store array object count
@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%li is the new highest value", highestValueSoFar);
         }
         
-        // Print the highest number in the array
+        // After loop has finished, print the highest number in the array
         NSLog(@"The entire list has been evaluated");
         NSLog(@"The highest number in the list is %li", highestValueSoFar);
     }
