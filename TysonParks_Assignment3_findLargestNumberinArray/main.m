@@ -20,14 +20,7 @@ int main(int argc, const char * argv[]) {
         
         // Cheeky personification of program
         NSLog(@"Let's look at these numbers one by one until we find the highest number");
-        
-        // TEST Print an item from the array
-        //NSLog(@"The array item at reference [4] is %@", numberList[4]);
-        
-        // TEST Get the NSInteger 'long' value of the NSNumber in the array and print
-        //NSInteger numberValue = [numberList[4] integerValue];
-        //NSLog(@"The NSNumber %@ has a value of %li", numberList[4], numberValue);
-        
+     
         // Create loop counter i
         int i = 1;
         
