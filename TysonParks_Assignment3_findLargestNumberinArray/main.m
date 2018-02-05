@@ -29,14 +29,16 @@ int main(int argc, const char * argv[]) {
         //NSLog(@"The NSNumber %@ has a value of %li", numberList[4], numberValue);
         
         // Create loop counter i
-        int i = 0;
+        int i = 1;
         
         // Create temporary variable to store the highest value so far
-        NSInteger highestValueSoFar = 0;
+        // Initialize with the first number in the list
+        NSInteger highestValueSoFar = [numberList[0] integerValue];
         
         // Create a recursive evaluation loop that compares each number value in the array to the highest value stored so far,
         // storing a new highest value when a higher number is found
-        for (i = 0; i < numberOfItems; i++) {
+        // Start at Array index[1] instead of index[0] because highestValueSoFar is already initialized to the index[0] value
+        for (i = 1; i < numberOfItems; i++) {
             NSInteger numberValue = [numberList[i] integerValue];
             NSLog(@"numbers tested: %li and %li", highestValueSoFar, numberValue);
             highestValueSoFar = (highestValueSoFar >= numberValue) ? highestValueSoFar : numberValue;
