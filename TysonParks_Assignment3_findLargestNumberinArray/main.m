@@ -23,19 +23,23 @@ int main(int argc, const char * argv[]) {
      
         // Create loop counter i
         int i = 1;
+        int j = 1;
         NSInteger firstValue = [numberList[0] integerValue];
-        NSMutableArray *orderedNumberList = [[NSMutableArray alloc] init];
-        [orderedNumberList addObject:numberList[0]];
-        NSLog(@"orderedNumberlist now contains: %@", orderedNumberList);
+        NSMutableArray *orderedNumberList = [[NSMutableArray alloc] initWithObjects:numberList[0], nil];
+        NSInteger numberOfNewItems = [orderedNumberList count];
+        NSLog(@"orderedNumberlist now contains %lu items: %@", numberOfNewItems, orderedNumberList);
         
-        
+        /*
         for (i = 1; i < numberOfItems; i++) {
-            NSInteger originalNumberValue = [numberList[i] integerValue];
+            NSInteger originalArrayNumberValue = [numberList[i] integerValue];
+            NSInteger newArrayNumberValue = [orderedNumberList[j] integerValue];
+            for (j = 0; i < numberOfItems; i++)
             
             if (<#condition#>) {
                 <#statements#>
             }
         }
+        */
          
         
         
