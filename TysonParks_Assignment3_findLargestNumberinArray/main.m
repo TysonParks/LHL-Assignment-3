@@ -23,24 +23,47 @@ int main(int argc, const char * argv[]) {
      
         // Create loop counter i
         int i = 1;
+        NSInteger firstValue = [numberList[0] integerValue];
+        NSMutableArray *orderedNumberList = [[NSMutableArray alloc] init];
+        [orderedNumberList addObject:numberList[0]];
+        NSLog(@"orderedNumberlist now contains: %@", orderedNumberList);
+        
+        
+        for (i = 1; i < numberOfItems; i++) {
+            NSInteger originalNumberValue = [numberList[i] integerValue];
+            
+            if (<#condition#>) {
+                <#statements#>
+            }
+        }
+         
+        
+        
+        
+        
+        
+        
         
         // Create temporary variable to store the highest value so far
         // Initialize with the first number in the list
-        NSInteger highestValueSoFar = [numberList[0] integerValue];
+        // NSInteger highestValueSoFar = [numberList[0] integerValue];
         
         // Create a recursive evaluation loop that compares each number value in the array to the highest value stored so far,
         // storing a new highest value when a higher number is found
         // Start at Array index[1] instead of index[0] because highestValueSoFar is already initialized to the index[0] value
-        for (i = 1; i < numberOfItems; i++) {
+        /* for (i = 1; i < numberOfItems; i++) {
             NSInteger numberValue = [numberList[i] integerValue];
             NSLog(@"numbers tested: %li and %li", highestValueSoFar, numberValue);
             highestValueSoFar = (highestValueSoFar >= numberValue) ? highestValueSoFar : numberValue;
             NSLog(@"%li is the new highest value", highestValueSoFar);
         }
+        */
         
         // After loop has finished, print the highest number in the array
+        /*
         NSLog(@"The entire list has been evaluated");
         NSLog(@"The highest number in the list is %li", highestValueSoFar);
+         */
     }
     return 0;
 }
