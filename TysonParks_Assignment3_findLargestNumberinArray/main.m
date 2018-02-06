@@ -73,15 +73,18 @@ int main(int argc, const char * argv[]) {
         NSLog(@"The ouput list now contains %lu items: %@", numberOfFinalItems, orderedNumberList);
         
         
-        // Then what is the largest number?
+        // What is the LARGEST NUMBER?
+        // Select number in ouput list with the highest index number
         NSNumber *largestNumber = orderedNumberList[(numberOfFinalItems-1)];
         NSLog(@"The largest number in the list is %@", largestNumber);
         
-        // Then what is the smallest number?
+        // What is the SMALLEST NUMBER?
+        // Select number in output list at index [0]
         NSNumber *smallestNumber = orderedNumberList[0];
         NSLog(@"The smallest number in the list is %@", smallestNumber);
         
-        // Then what is the median number?
+        // What is the MEDIAN NUMBER?
+        // Figure out based upon even/odd case of element count
         NSNumber *medianNumber;
         // If there is an odd number of items in the list, the median is the middle item
         if ((numberOfFinalItems) % 2) {
@@ -95,6 +98,18 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"The median number in the list is %@", medianNumber);
         
+        // What is the AVERAGE NUMBER?
+        // Create recursive addition loop, then divide by number of elements in list
+        NSInteger oldTotal = [orderedNumberList[0] integerValue];
+        // Recursive addition loop
+        for (int i = 1; i < numberOfFinalItems; i++) {
+            NSInteger newTotal = oldTotal + [orderedNumberList[i] integerValue];
+            oldTotal = newTotal;
+        }
+        // Convert to float for division
+        float finalTotal = (float)oldTotal;
+        float averageNumber = finalTotal / (float)numberOfFinalItems;
+        NSLog(@"The average number in the list is %.2f", averageNumber);
     }
     
     
